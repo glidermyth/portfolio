@@ -16,6 +16,7 @@
 
 body {
     background-color: var(--background-color);
+    position: relative;
 }
 
 header{
@@ -31,6 +32,12 @@ header{
     justify-content: center;
     align-items: center;
     column-gap: 3rem;
+}
+.navigation > img[alt="burger-menu"]{
+    display:none;
+}
+.navigation > .mobile-links {
+    display: none;
 }
 .navigation > img {
     object-fit: cover;
@@ -65,7 +72,7 @@ header{
 }
 
 #about {
-    width: 80vw;
+    width: 70vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -74,7 +81,9 @@ header{
 .about-image {
     display: flex;
     justify-content: center;
-    column-gap: 2rem;
+    column-gap:3rem;
+    width: 70vw;
+    margin: 0 auto;
 }
 .name {
     display: flex;
@@ -101,12 +110,28 @@ header{
     border-radius: 0.5rem;
     cursor: pointer;
 }
+.about > .image {
+    /* height: 350px; */
+}
+.about-image > .image >img {
+    border-radius: 33% 15% 33%;
+    object-fit: cover;
+    height: 370px;
+}
 .about-desc {
-    width: 73vw;
+    width: 50vw;
     align-self: center;
 }
 .about-desc > h1 {
     margin-bottom: 0.5rem;
+    padding: 0 1rem;
+    border-right: 2px solid var(--yellow);
+    border-left: 2px solid var(--yellow);
+    /* border-bottom: 2px solid var(--yellow); */
+    width: max-content;
+}
+.about-desc > p {
+    text-align: justify;
 }
 .about-desc > p > i{
     /* font-size: 2rem; */
@@ -117,7 +142,7 @@ header{
     margin-top: 10vh;
     margin-left: auto;
     margin-right:auto;
-    width: 80vw;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
@@ -153,7 +178,7 @@ header{
     margin-left: auto;
     margin-right: auto;
     color: var(--grey);
-    width: 80vw;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
@@ -215,4 +240,117 @@ header{
     height: 2px;
     width: 35%;
     background-color: var(--yellow);
+}
+
+footer {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10vh;
+    color: var(--grey);
+    text-align: center;
+    margin-top: 5rem;
+    background-color: var(--retro-black);
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+}
+
+
+@media screen and (max-width: 501px){
+    .links {
+        display: none;
+    }
+    .navigation {
+        justify-content: space-around;
+    }
+    .navigation > img[alt="burger-menu"]{
+        display: inline;
+        cursor: pointer;
+    }
+    .navigation > .mobile-links{
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        row-gap: 5vh;
+        width: 80vw;
+        height: 50vh;
+        background: var(--retro-black);
+        z-index: 1;
+        border-top-left-radius: 0.7rem;
+        border-bottom-left-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+        display: none;
+    }
+    /* .mobile-links-visibility {
+        display: flex;
+    } */
+    .navigation > .mobile-links > div {
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation > .mobile-links > .link {
+        color: var(--grey);
+    }
+    img[alt="cross-icon"] {
+        align-self: flex-end;
+        object-fit: cover;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+    }
+
+    .about-image{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2rem;
+    }
+    .about-image > .image {
+        order: 1;
+    }
+    .about-image > .name {
+        order: 2;
+        width: 100%;
+    }
+    .name > h1 > span {
+        display:block;
+        font-size: 2.3rem;
+    }
+    .about-image > .image > img {
+        object-fit: cover;
+        width: 90vw;
+        height: 400px;
+        
+    }
+    .about-desc {
+        margin-top: 2rem;
+        width: 70vw;
+    }
+    .about-desc > h1{
+        text-align: center;
+    }
+    .about-desc > p {
+        text-align: justify;
+    }
+    #skills > .images > div {
+        width: 7rem;
+    }
+    #skills > .images > div > img {
+        object-fit: cover;
+        width: 85%;
+    }
+    .contact-info {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    .contact-card {
+        width: 90%;
+        /* justify-content: center; */
+    }
 }
